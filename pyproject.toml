@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auto-auction"
+version = "0.1.0"
+description = "Auction house pet bargain scanner via fixed ROI + RapidOCR (Windows-first)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "opencv-python-headless>=4.9.0,<5",
+  "mss>=9.0.0,<10",
+  "numpy>=1.26.0,<3",
+  "pydantic>=2.5.0,<3",
+  "PyYAML>=6.0.1,<7",
+  "ruamel.yaml>=0.18.0,<0.19",
+  "pynput>=1.7.6,<2",
+  "pydirectinput>=1.0.4,<2",
+  "pyautogui>=0.9.54,<1",
+  "rapidocr>=3.0,<4",
+  "onnxruntime>=1.17.0,<2",
+]
+
+[project.scripts]
+auto-auction = "auto_auction.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
